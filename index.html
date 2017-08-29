@@ -53,5 +53,17 @@
         });
       }
 </script>
+<script type="text/javascript">
+  var link = document.getElementById('signup1');
+  analytics.trackLink(link, 'CTA Clicked wow Google(event action)', {
+    location: 'Center',
+    color: 'Green',
+    text: 'Signup Here!',
+    CTA: 'Signup',
+    category: 'Home Page(event category)',
+    type: 'Button',
+    pageTitle: document.title
+  });
+</script>
 </body> 
 </html>
