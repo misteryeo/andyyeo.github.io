@@ -32,36 +32,36 @@
     
     <!--Placeholder for identify and track script -->
     <script type="text/javascript">
-      function identify(e){
-        e.preventDefault();
-        var form = e.target;
-        var email = form["email"].value;
-        var fullname = form["fullname"].value;
-        var destination = form["destination"].value;
-        var details = form["details"].value;
-        var user = {
-            email: email, 
-            name: fullname, 
-            destination: destination, 
-            details: details
-        };
-        analytics.identify(12345, {
-            email: email, 
-            name: fullname
-        });
-        analytics.track('Destination Submitted', user, function() {
-            window.location.href = "";
-        });
-      }
+//       function identify(e){
+//         e.preventDefault();
+//         var form = e.target;
+//         var email = form["email"].value;
+//         var fullname = form["fullname"].value;
+//         var destination = form["destination"].value;
+//         var details = form["details"].value;
+//         var user = {
+//             email: email, 
+//             name: fullname, 
+//             destination: destination, 
+//             details: details
+//         };
+//         analytics.identify(12345, {
+//             email: email, 
+//             name: fullname
+//         });
+//         analytics.track('Destination Submitted', user, function() {
+//             window.location.href = "";
+//         });
+//       }
         
         
-      analytics.page({
-          path: '/',
-          referrer: 'http://m.facebook.com/',
-          search: '?utm_source=facebook&utm_medium=cpc&utm_campaign=account-created',
-          title: 'Holistic and Integrative Medicine | Harvey',
-          url: 'https://www.goharvey.com/?utm_source=facebook&utm_medium=cpc&utm_campaign=account-created'
-      });
+//       analytics.page({
+//           path: '/',
+//           referrer: 'http://m.facebook.com/',
+//           search: '?utm_source=facebook&utm_medium=cpc&utm_campaign=account-created',
+//           title: 'Holistic and Integrative Medicine | Harvey',
+//           url: 'https://www.goharvey.com/?utm_source=facebook&utm_medium=cpc&utm_campaign=account-created'
+//       });
 
 </script>
     
