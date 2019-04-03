@@ -32,6 +32,12 @@ intrk('track', 'viewcategory');
 </head> 
 <body> 
 <h1>This is the path page</h1> 
-    
+<script>
+document.getElementById("myDIV").addEventListener("scroll", myFunction);
+
+function myFunction() {
+  document.getElementById("demo").innerHTML = "You scrolled in div.";
+}
+</script>
 </body>
 </html>
