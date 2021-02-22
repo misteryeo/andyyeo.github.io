@@ -17,117 +17,44 @@
     
         <body>
 
-		
-        <div id="header-wrapper">
-            <div id="header" class="container">
-                <div id="logo">
-                    <h2><a href="#">What is your favorite place to travel?</a></h2>
-                </div>
-            </div>
-        </div>
-        <div id="page-wrapper">
-            <div id="welcome" class="container">
-                <form name="travel" class="form label" onsubmit="identify(event)">
-                    What is your favorite travel destination?
-                    <input name="destination" class="form input.text" required="" size="81" type="text"/> 
-                    <br><br><br> 
-                    Any recommendations (cool things to do, places to visit or restaurants to eat)? 
-                    <br><br> 
-                    <textarea cols="20" name="details" required="" rows="10">
-                    </textarea> 
-                    <br><br> 
-                    Name: <input name="fullname" required="" size="75" type="text"/> 
-                    <br><br> 
-                    Email: <input name="email" required="" size="75" type="email"/> 
-                    <br><br>
-                    <input name="submit" class="button button-small" type="submit" value="submit"/>
-                    <br><br>
-                    <button class="button button-small" onclick="myFunction()">Click me</button>
-                </form>
-		<br><br>
-		<form name="travel2" class="form label" onsubmit="track(event)">
-			Name: <input name="name" required="" size="75" type="text"/> 
-                    	<br><br> 
-                    	Age: <input name="age" required="" size="75" type="number"/> 
-                    	<br><br>
-			Gender: <input name="gender" required="" size="75" type="text"/> 
-                    	<br><br>
-                	<input name="submit" class="button button-small" type="submit" value="submit"/>
-		</form>
-		    <button class="button button-small" onclick="myFunction2()">Identify People</button>
-            </div>
-        </div>
-	<script type="text/javascript">
-    		function identify(e){
-        		e.preventDefault();
-        		var form = e.target;
-        		var email = form["email"].value;
-        		var fullname = form["fullname"].value;
-        		var destination = form["destination"].value;
-        		var details = form["details"].value;
-        		var user = {
-            			email: email,
-            			name: fullname,
-            			destination: destination,
-            			details: details
-        		};
+	
+<h1>What is your favorite place to travel?</h1> 
+<p>I am building a directory of the sweetest travel destinations.</p> 
 
-        		analytics.identify(1233456, {
-            			email: email, 
-            			name: fullname
-        		}, {
-            			'integrations': {
-                		'Salesforce': true,
-                		'Klaviyo': true
-            			}
-			});
+<form name="travel" onsubmit="identify(event)"> What is your favorite travel destination? <input name="destination" required="" size="81" type="text"/> 
+<br><br><br> 
+Any recommendations (cool things to do, places to visit or restaurants to eat)? 
+<br><br> 
+<textarea cols="81" name="details" required="" rows="10"> </textarea> 
+<br><br> 
+Name: <input name="fullname" required="" size="75" type="text"/> 
+<br><br> 
+Email: <input name="email" required="" size="75" type="email"/> 
+<br><br> <input name="submit" type="submit" value="submit"/> </form> 
 
-        		analytics.track('Destination Submitted', user, function() {
-            			window.location.href = "";
-        		});
-    		}
-		
-		function track(e){
-        		e.preventDefault();
-        		var form = e.target;
-        		var name = form["name"].value;
-        		var age = form["age"].value;
-        		var gender = form["gender"].value;
-        		var user = {
-            			name: name,
-            			age: age,
-            			gender: gender
-        		};
+<script type="text/javascript"> 
+function identify(e){ 
+e.preventDefault(); 
+var form = e.target; 
+var email = form["email"].value; 
+var fullname = form["fullname"].value; 
+var destination = form["destination"].value; 
+var details = form["details"].value; 
+var user = { 
+  email: email, 
+  name: fullname, 
+  destination: 
+  destination, 
+  details: details 
+}; 
+analytics.identify('1234', { 
+  email: email, 
+  name: fullname 
+}); 
+analytics.track('destination submitted', user, function() { 
+  window.location.href = ""; 
+}); } 
+</script> 
 
-        		analytics.identify(13444, {
-            			firstName: "Jason", 
-				lastName: "Martin",
-				gender: gender
-			});
-
-        		analytics.track('Signed Up', user, function() {
-            			window.location.href = "";
-        		});
-    		}
-    
-    		function myFunction() {
-        		analytics.track('Button Clicked To New Page', {
-            			title: "Tester"
-    			}, function() {
-                    window.location.href = "/path.html"
-                });
-		}
-		
-    		function myFunction2() {
-        		
-			analytics.identify(123, {
-            			firstName: "Jason", 
-				gender: "m",
-				age: 21
-			});
-			
-		}
-	</script>
-            
-    </body>
+</body> 
 </html>
